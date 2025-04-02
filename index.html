@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Ubuntu+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Ubuntu Top Bar -->
+    <header class="top-bar">
+      <div class="logo">zulfianaRahmi@portfolio:~</div>
+      <nav class="desktop-nav">
+        <a href="#about" data-section="about"
+          ><i class="fas fa-user"></i> About</a
+        >
+        <a href="#projects" data-section="projects"
+          ><i class="fas fa-code"></i> Projects</a
+        >
+        <a href="#skills" data-section="skills"
+          ><i class="fas fa-laptop-code"></i> Skills</a
+        >
+        <a href="#contact" data-section="contact"
+          ><i class="fas fa-envelope"></i> Contact</a
+        >
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <span data-section="about"><i class="fas fa-user"></i> About</span>
+      <span data-section="projects"><i class="fas fa-code"></i> Projects</span>
+      <span data-section="skills"
+        ><i class="fas fa-laptop-code"></i> Skills</span
+      >
+      <span data-section="contact"
+        ><i class="fas fa-envelope"></i> Contact</span
+      >
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+      <!-- About Window -->
+      <div class="window" id="about-window">
+        <div class="window-header">
+          <span>about_me.txt</span>
+          <div class="window-controls">
+            <button title="Minimize">—</button>
+            <button title="Maximize">□</button>
+            <button title="Close">✕</button>
+          </div>
+        </div>
+        <div class="window-content">
+          <div class="about-container">
+            <div class="profile-section">
+              <img
+                src="img/profil.jpg"
+                alt="Profile Photo"
+                class="profile-img"
+                width="400"
+              />
+              <h1 class="ubuntu-orange">Hello World!</h1>
+              <h2>LInterested in System Administration and Cloud Computing</h2>
+              <div class="social-links">
+                <a href="https://github.com/zulfianarahmi" target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/zulfiana-rahmi/"
+                  target="_blank"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="mailto:zulfianarahmi4@gmail.com" target="_blank">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="bio-section">
+              <h3><i class="fas fa-user"></i> About Me</h3>
+              <p>
+                A 6th-semester Information Systems student passionate about
+                Cloud Computing and System Administration. Experienced in Oracle
+                Cloud, Google Cloud, SQL, and Linux system management, with
+                certifications from Oracle, Cisco, and IBM. Dedicated to
+                optimizing IT infrastructure and security while leveraging cloud
+                technologies for business efficiency.
+              </p>
+
+              <div class="info-grid">
+                <div>
+                  <i class="fas fa-map-marker-alt"></i> Location: Depok, Jawa
+                  Barat, Indonesia
+                </div>
+                <div>
+                  <i class="fas fa-briefcase"></i> Experience: 2+ years (Admin &
+                  Data Entry)
+                </div>
+                <div>
+                  <i class="fas fa-graduation-cap"></i> Education: Bachelor's in
+                  Information Systems (6th Semester)
+                </div>
+                <div>
+                  <i class="fas fa-certificate"></i> Certifications: Oracle
+                  Cloud, Cisco Cybersecurity, IBM Database Administration
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="terminal">
+            <div class="terminal-help">Type commands or click to interact</div>
+            <div><span class="prompt">$</span> whoami</div>
+            <div>> Full Name: Zulfiana Rahmi</div>
+            <br />
+            <div><span class="prompt">$</span> cat skills.txt</div>
+            <div>> Linux Server Administration</div>
+            <div>> Cloud Computing (Oracle Cloud, Google Cloud)</div>
+            <div>> SQL & Database Management</div>
+            <div>> Python (Basic) & Scripting</div>
+            <br />
+            <div>
+              <span class="prompt">$</span> <span class="cursor">_</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Window -->
+      <div class="window" id="projects-window">
+        <div class="window-header">
+          <span>projects/</span>
+          <div class="window-controls">
+            <button title="Minimize">—</button>
+            <button title="Maximize">□</button>
+            <button title="Close">✕</button>
+          </div>
+        </div>
+        <div class="window-content">
+          <div class="view-toggle">
+            <button class="ubuntu-button active" data-view="terminal">
+              Terminal View
+            </button>
+            <button class="ubuntu-button" data-view="card">Card View</button>
+          </div>
+
+          <!-- Terminal View -->
+          <div class="terminal-view">
+            <div class="terminal">
+              <div class="terminal-help">
+                Click on project names to view details
+              </div>
+              <div><span class="prompt">$</span> ls -la projects/</div>
+              <div>
+                > drwxr-xr-x 2 user 4096 Jan 10
+                <a href="#" class="terminal-link" data-project="server-setup"
+                  >TechMateBot – Cloud, DevOps & Data Learning Assistant</a
+                >
+              </div>
+              <div>
+                > drwxr-xr-x 2 user 4096 Feb 15
+                <a href="#" class="terminal-link" data-project="web-app"
+                  >Backend CRUD API – Node.js, Express, TypeScript</a
+                >
+              </div>
+              <div>
+                > -rw-r--r-- 1 user 1024 Mar 22
+                <a href="#" class="terminal-link" data-project="automation"
+                  >Restaurant Reservation Database – MySQL & Database Design</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Card View -->
+          <div class="card-view hidden">
+            <div class="project-card" data-project="server-setup">
+              <div class="project-title">
+                <i class="fas fa-server"></i>
+                <h3>TechMateBot</h3>
+              </div>
+              <div class="project-description">
+                Interactive Telegram chatbot to help beginners learn about Cloud
+                Computing, DevOps, and Data Analytics.
+              </div>
+              <div class="project-tags">
+                <span class="project-tag">Cloud</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Chatbot</span>
+              </div>
+              <div class="project-actions">
+                <button class="project-btn">
+                  <i class="fas fa-eye"></i> Demo
+                </button>
+                <button class="project-btn">
+                  <i class="fas fa-code"></i> Code
+                </button>
+              </div>
+            </div>
+
+            <div class="project-card" data-project="web-app">
+              <div class="project-title">
+                <i class="fas fa-globe"></i>
+                <h3>Backend CRUD API</h3>
+              </div>
+              <div class="project-description">
+                RESTful API for managing notes, built using Node.js, Express,
+                TypeScript, and PostgreSQL..
+              </div>
+              <div class="project-tags">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">Express</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">PostgreSQL</span>
+              </div>
+              <div class="project-actions">
+                <button class="project-btn">
+                  <i class="fas fa-eye"></i> Demo
+                </button>
+                <button class="project-btn">
+                  <i class="fas fa-code"></i> Code
+                </button>
+              </div>
+            </div>
+
+            <div class="project-card" data-project="automation">
+              <div class="project-title">
+                <i class="fas fa-robot"></i>
+                <h3>Restaurant Reservation Database</h3>
+              </div>
+              <div class="project-description">
+                Designed and optimized a MySQL relational database system to
+                manage restaurant reservations.
+              </div>
+              <div class="project-tags">
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">Database</span>
+                <span class="project-tag">SQL</span>
+              </div>
+              <div class="project-actions">
+                <button class="project-btn">
+                  <i class="fas fa-eye"></i> Demo
+                </button>
+                <button class="project-btn">
+                  <i class="fas fa-code"></i> Code
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Detail Window -->
+      <div class="window hidden" id="project-detail-window">
+        <div class="window-header">
+          <span id="project-detail-title">project/detail.md</span>
+          <div class="window-controls">
+            <button title="Minimize">—</button>
+            <button title="Maximize">□</button>
+            <button title="Close">✕</button>
+          </div>
+        </div>
+        <div class="window-content">
+          <div class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+          </div>
+          <div class="project-detail-content">
+            <!-- Project details will be loaded here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Window -->
+      <div class="window" id="skills-window">
+        <div class="window-header">
+          <span>skills.sh</span>
+          <div class="window-controls">
+            <button title="Minimize">—</button>
+            <button title="Maximize">□</button>
+            <button title="Close">✕</button>
+          </div>
+        </div>
+        <div class="window-content">
+          <h2 class="ubuntu-orange">Technical Skills</h2>
+          <div class="skills-container">
+            <div class="skill-category">
+              <h3><i class="fas fa-server"></i> System Administration</h3>
+              <div class="skill-bars">
+                <div class="skill-item">
+                  <span>Linux</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span>Bash Scripting</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span>Docker</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3><i class="fas fa-code"></i> Development</h3>
+              <div class="skill-bars">
+                <div class="skill-item">
+                  <span>Python</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span>HTML/CSS</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span>JavaScript</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 70%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+              <div class="skill-bars">
+                <div class="skill-item">
+                  <span>Git</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 88%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span>AWS</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span>CI/CD</span>
+                  <div class="skill-bar">
+                    <div class="skill-level" style="width: 78%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Window -->
+      <div class="window" id="contact-window">
+        <div class="window-header">
+          <span>contact.sh</span>
+          <div class="window-controls">
+            <button title="Minimize">—</button>
+            <button title="Maximize">□</button>
+            <button title="Close">✕</button>
+          </div>
+        </div>
+        <div class="window-content">
+          <div class="terminal contact-terminal">
+            <form id="contact-form">
+              <div><span class="prompt">$</span> cat contact_info.txt</div>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Your name" required />
+              </div>
+
+              <div><span class="prompt">$</span> cat email.txt</div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+
+              <div><span class="prompt">$</span> nano message.txt</div>
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea
+                  id="message"
+                  placeholder="Your message..."
+                  required
+                ></textarea>
+              </div>
+
+              <div><span class="prompt">$</span> ./send.sh</div>
+              <button type="submit" class="ubuntu-button">Execute</button>
+            </form>
+
+            <div class="contact-info">
+              <h3>Or reach me directly:</h3>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i> zulfianarahmi4@gmail.com
+              </div>
+              <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                https://www.linkedin.com/in/zulfiana-rahmi/
+              </div>
+              <div class="contact-item">
+                <i class="fab fa-github"></i> https://github.com/zulfianarahmi
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Dock -->
+    <div class="dock">
+      <div class="dock-icon active" data-section="about" title="About">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="dock-icon" data-section="projects" title="Projects">
+        <i class="fas fa-code"></i>
+      </div>
+      <div class="dock-icon" data-section="skills" title="Skills">
+        <i class="fas fa-laptop-code"></i>
+      </div>
+      <div class="dock-icon" data-section="contact" title="Contact">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div
+        class="dock-icon"
+        title="GitHub"
+        data-url="https://github.com/zulfianarahmi"
+      >
+        <i class="fab fa-github"></i>
+      </div>
+      <div
+        class="dock-icon"
+        title="LinkedIn"
+        data-url="https://www.linkedin.com/in/zulfiana-rahmi/"
+      >
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </div>
+
+    <!-- Help Button -->
+    <div class="help-button" id="show-help">
+      <i class="fas fa-question-circle"></i>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
