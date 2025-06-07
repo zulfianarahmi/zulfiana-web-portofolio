@@ -1,7 +1,7 @@
 # Zulfiana Rahmi – Personal Portfolio
 https://zulfiana-web-portofolio.vercel.app/ 
 
-A modern, responsive personal portfolio website built with HTML, CSS, and JavaScript. Showcasing projects, skills, certifications, and professional experience, with a focus on cloud, infrastructure, and cybersecurity.
+A modern, responsive personal portfolio website built with HTML, CSS, and JavaScript. Showcasing projects, skills, certifications, and professional experience.
 
 ## ✨ Features
 - Ubuntu/terminal-inspired design
