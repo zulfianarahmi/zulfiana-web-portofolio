@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Ubuntu+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <!-- Ubuntu Top Bar -->
+    <header class="top-bar">
+      <div class="logo">zulfianaRahmi@portfolio:~</div>
+      <nav class="desktop-nav">
+        <a href="#projects" data-section="projects"><i class="fas fa-code"></i> Projects</a>
+        <a href="#contact" data-section="contact"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <span data-section="projects"><i class="fas fa-code"></i> Projects</span>
+      <span data-section="contact"><i class="fas fa-envelope"></i> Contact</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+      <!-- About Window -->
+      <div class="window" id="about-window">
+        <div class="window-header">
+          <span>about_me.txt</span>
+          <div class="window-controls">
+            <button title="Minimize">—</button>
+            <button title="Maximize">□</button>
+            <button title="Close">✕</button>
+          </div>
+        </div>
+        <div class="window-content">
+          <div class="about-container">
+            <div class="profile-section">
+              <img
+                src="img/profil.jpg"
+                alt="Profile Photo"
+                class="profile-img"
+                width="400"
+              />
+              <div style="text-align:center; margin-top: 10px;">
+                <span id="typing-hello" style="font-size:2.2rem;font-weight:bold;color:var(--ubuntu-orange);display:inline-block;"></span>
+                <span id="wave-hand" style="font-size:2.2rem;display:inline-block;">👋</span>
+              </div>
+              <script>
+              const text = 'Hello World! ';
+              let i = 0;
+              function typeHello() {
+                if (i < text.length) {
+                  document.getElementById('typing-hello').innerHTML += text.charAt(i);
+                  i++;
+                  setTimeout(typeHello, 80);
+                }
+              }
+              document.addEventListener('DOMContentLoaded', typeHello);
+              </script>
+              <h2>Interested in System Administration and Cloud Computing</h2>
+              <div class="social-links social-links-large">
+                <a href="https://github.com/zulfianarahmi" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/zulfiana-rahmi/" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:zulfianarahmi4@gmail.com" target="_blank">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="bio-section">
+              <h3><i class="fas fa-user"></i> About Me</h3>
+              <p>
+                Aspiring Cloud & System Administrator with hands-on experience in Oracle Cloud (OCI), Linux, and cybersecurity. Passionate about building scalable infrastructure, automating workflows, and optimizing systems. Actively contributing to tech communities (GDG) while pursuing certifications in cloud technologies.
+              </p>
+            </div>
+          </div>
+
+          <div class="terminal">
+            <div class="terminal-help">Type commands or click to interact</div>
+            <div><span class="prompt">$</span> whoami</div>
+            <div>> Full Name: Zulfiana Rahmi 🌸</div>
+            <br />
+            <div><span class="prompt">$</span> Profession i want be.txt</div>
+            <div>> Syadmin</div>
+            <div>> Technical Writing & Documentation</div>
+            <div>> Content Creation & Blog Writing</div>
+            <br />
+            <div>
+              <span class="prompt">$</span> <span class="cursor">_</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Window (Featured Only 2) -->
+      <div class="window" id="projects-window">
+        <div class="window-header">
+          <span>projects/</span>
+          <div class="window-controls">
+            <button title="Minimize">—</button>
+            <button title="Maximize">□</button>
+            <button title="Close">✕</button>
+          </div>
+        </div>
+        <div class="window-content">
+          <h3 class="ubuntu-orange">Featured Projects</h3>
+          <div class="card-view">
+            <div class="project-card" data-project="eduquiz">
+              <div class="project-title">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>eduquiz-app</h3>
+              </div>
+              <div class="project-description">
+                Aplikasi Quiz Interaktif untuk Edukasi. Dibangun dengan Vue.js (Frontend) & Express.js (Backend). Fitur: login, materi, kuis, skor, dan proteksi halaman.
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/username/eduquiz" class="project-btn" target="_blank">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+            <div class="project-card" data-project="basic-linux-admin">
+              <div class="project-title">
+                <i class="fas fa-server"></i>
+                <h3>Basic-Linux-Administration</h3>
+              </div>
+              <div class="project-description">
+                Step-by-step guide to setting up and securing a Linux server (Ubuntu/CentOS). Covers user management, SSH, firewall, and more.
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/zulfianarahmi/Basic-Linux-Administration" class="project-btn" target="_blank">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:12px;">
+            <a href="projects.html" class="project-btn" style="font-size:1em;">
+              See all projects <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Detail Window -->
+      <div class="window hidden" id="project-detail-window">
+        <div class="window-header">
+          <span id="project-detail-title">project/detail.md</span>
+          <div class="window-controls">
+            <button title="Minimize">—</button>
+            <button title="Maximize">□</button>
+            <button title="Close">✕</button>
+          </div>
+        </div>
+        <div class="window-content">
+          <div class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+          </div>
+          <div class="project-detail-content">
+            <!-- Project details will be loaded here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Window -->
+      <div class="window" id="skills-window">
+        <div class="window-header">
+          <span>skills.sh</span>
+          <div class="window-controls">
+            <button title="Minimize">—</button>
+            <button title="Maximize">□</button>
+            <button title="Close">✕</button>
+          </div>
+        </div>
+        <div class="window-content">
+          <h2 class="ubuntu-orange">Skill Highlights</h2>
+          <ul style="font-family:'Ubuntu Mono',monospace;font-size:1.08rem;line-height:2;">
+            <li>Basic Linux administration: server setup, user & permission, SSH, firewall</li>
+            <li>Basic cloud computing: Oracle Cloud, AWS, GCP (simple deploy & resource management)</li>
+            <li>Build simple REST APIs with Node.js & Express</li>
+            <li>Bash scripting for simple backup & deployment automation</li>
+            <li>Basic data analysis with Python (NumPy, Pandas) & SQL</li>
+            <li>Basic network security & cybersecurity (Cisco Essentials)</li>
+            <li>Project management & teamwork (Jira, Notion, workshop facilitation)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Experience Window -->
+      <div class="window" id="experience-window">
+        <div class="window-header">
+          <span>experience.md</span>
+          <div class="window-controls">...</div>
+        </div>
+        <div class="window-content">
+          <h2 class="ubuntu-orange">Professional Experience</h2>
+          <div class="job">
+            <h3>Administrative Staff – PT. Satya Putra Bangsa</h3>
+            <span>Apr 2023 – Present | Depok, Indonesia</span>
+            <ul>
+              <li>Organized and maintained a structured filing system, improving document retrieval efficiency by 25%.</li>
+              <li>Generated periodic reports to support decision-making processes.</li>
+              <li>Managed petty cash, ensuring accurate recording and reporting of all transactions.</li>
+              <li>Maintained high data integrity and minimized errors through regular data validation.</li>
+            </ul>
+          </div>
+
+          <h2 class="ubuntu-orange">Training & Certification</h2>
+          <div class="job">
+            <h3>AI Trainee – Alibaba Cloud Model Studio & Qwen Talent Scouting Academy</h3>
+            <span>Apr 2025 – May 2025 | Remote</span>
+            <ul>
+              <li>Selected for Batch 1 of Alibaba Cloud Indonesia GenAI Hackathon 2025.</li>
+              <li>Intensive training in cloud computing, AI product development, and generative AI technologies.</li>
+              <li>Hands-on with Alibaba Cloud Model Studio, QwenLLM, SahabatAI LLM.</li>
+              <li>Preparing for Alibaba Clouder global certification.</li>
+            </ul>
+          </div>
+          <div class="job">
+            <h3>Cloud Engineering Trainee – Digital Talent Scholarship (Oracle Cloud Infrastructure Foundation I & II)</h3>
+            <span>Feb 2024 – Jun 2024 | Indonesia</span>
+            <ul>
+              <li>Gained in-depth knowledge of Oracle Cloud Infrastructure (OCI), including Core Infrastructure, Database, Platform Solutions, and Governance.</li>
+              <li>Developed expertise in Networking, Load Balancing, and cloud automation with Terraform.</li>
+              <li>Learned best practices in Database Management, optimizing storage, performance, and scalability.</li>
+            </ul>
+          </div>
+          <div class="job">
+            <h3>Cybersecurity Essentials Intermediate-Level Trainee – Indosat Ooredoo Hutchison Digital Camp</h3>
+            <span>Jun 2024 – Jul 2024</span>
+            <ul>
+              <li>Comprehensive knowledge of cybersecurity principles: threat detection, encryption, network security, and incident response.</li>
+              <li>Hands-on with Cisco Packet Tracer for real-world cybersecurity scenarios.</li>
+              <li>Engaged in projects and case studies focused on identifying and mitigating security threats.</li>
+            </ul>
+          </div>
+
+          <h2 class="ubuntu-orange">Community & Leadership</h2>
+          <div class="job">
+            <h3>Project Manager – GDG Polsri Code 1 (APAC Google Solutions Challenge)</h3>
+            <span>Mar 2025 – May 2025 | Sriwijaya State Polytechnic</span>
+            <ul>
+              <li>Led a cross-functional team in executing Google's APAC Solutions Challenge.</li>
+              <li>Implemented Agile workflows using Jira and Notion, improving team task completion rate.</li>
+            </ul>
+          </div>
+          <div class="job">
+            <h3>Project Manager & Backend Developer – Google Developer Group Bootcamp</h3>
+            <span>Mar 2025 | Universitas Gunadarma</span>
+            <ul>
+              <li>Developed CRUD APIs for notes management using Node.js, Express, and TypeScript.</li>
+              <li>Led project planning, tracked tasks, and managed team progress using Jira.</li>
+              <li>Ensured cross-team communication and collaboration, resolving blockers and maintaining alignment with project goals.</li>
+            </ul>
+          </div>
+          <div class="job">
+            <h3>Google Arcade Facilitator – Google</h3>
+            <span>May 2024 – Jul 2024</span>
+            <ul>
+              <li>Facilitated cloud computing learning program on Google Cloud Platform (GCP).</li>
+              <li>Guided participants in understanding cloud architecture, compute, storage, and networking on GCP.</li>
+              <li>Gained hands-on experience with GCP services and cloud-native application development.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education Window -->
+      <div class="window" id="education-window">
+        <div class="window-header"><span>education.txt</span></div>
+        <div class="window-content">
+          <h3>Education</h3>
+          <ul>
+            <li><b>Universitas Terbuka</b> – Bachelor's Degree in Information Systems | 09/2022 – Present</li>
+            <li><b>SMK Al Asiyah</b> – Computer Software Engineering | 06/2018 - 06/2021</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Certifications Window -->
+      <div class="window" id="certification-window">
+        <div class="window-header">
+          <span>certifications.md</span>
+        </div>
+        <div class="window-content">
+          <h2 class="ubuntu-orange">Selected Certifications</h2>
+          <div class="cert-list">
+            <div class="cert-item">
+              <b>Advanced Data Analysis with PAI</b> – Alibaba Cloud (2025–2027)<br>
+              Credential ID: ACFW397250600212733<br>
+              <i>Skills:</i> Data Analysis, Alibaba Cloud PAI<br>
+              <span class="cert-desc">Gained skills in processing large datasets and building machine learning models for data-driven decisions.</span>
+            </div>
+            <div class="cert-item">
+              <b>Getting Started with DeepSeek on Alibaba Cloud (PAI EAS)</b> – Alibaba Cloud (2025–2027)<br>
+              Credential ID: ACFW442250600212734<br>
+              <i>Skills:</i> Alibaba Cloud, Cloud Computing, API Development<br>
+              <span class="cert-desc">Learned to deploy DeepSeek AI models efficiently for seamless app integration.</span>
+            </div>
+            <div class="cert-item">
+              <b>Artificial Intelligence (Talent Scouting Academy)</b> – Digital Talent Scholarship (2025)<br>
+              <span class="cert-desc">Intensive AI & Cloud training, hands-on with Alibaba Cloud Model Studio, QwenLLM, SahabatAI LLM.</span>
+            </div>
+            <div class="cert-item">
+              <b>Oracle Cloud Infrastructure 2023 Certified Foundations Associate</b> – Oracle (2024–2026)<br>
+              <i>Skills:</i> Oracle Cloud, OCI<br>
+              <span class="cert-desc">Demonstrated expertise in OCI core services, networking, storage, security, and cloud governance.</span>
+            </div>
+            <div class="cert-item">
+              <b>Cloud Practitioner Essentials (AWS)</b> – Dicoding Indonesia (2024)<br>
+              <i>Skills:</i> Amazon Web Services (AWS)<br>
+              <span class="cert-desc">Validated fundamental AWS and cloud computing knowledge, including compute, storage, security, and migration.</span>
+            </div>
+            <div class="cert-item">
+              <b>Introduction to Cybersecurity</b> – Cisco (2024)<br>
+              <i>Skills:</i> Cybersecurity<br>
+              <span class="cert-desc">Covered network vulnerabilities, best practices, and data privacy.</span>
+            </div>
+            <div class="cert-item">
+              <b>Networking Basics</b> – Cisco (2024)<br>
+              <i>Skills:</i> Networking<br>
+              <span class="cert-desc">Learned network fundamentals, IP addressing, protocols, and wireless networking.</span>
+            </div>
+            <div class="cert-item">
+              <b>Data Analysis with Python</b> – freeCodeCamp (2024)<br>
+              <i>Skills:</i> Data Analysis, Python, NumPy, Pandas, Matplotlib, Seaborn<br>
+              <span class="cert-desc">Proficiency in data cleaning, manipulation, and visualization with Python.</span>
+            </div>
+            <div class="cert-item">
+              <b>The Ultimate MySQL Bootcamp</b> – Udemy (2024)<br>
+              <i>Skills:</i> MySQL, SQL, Database Administration<br>
+              <span class="cert-desc">In-depth training in MySQL, complex queries, and real-world database challenges.</span>
+            </div>
+            <div class="cert-item">
+              <b>Microsoft Azure Data Fundamentals</b> – Microsoft (2024)<br>
+              <i>Skills:</i> Microsoft Azure, Azure SQL<br>
+              <span class="cert-desc">Core data concepts and implementation using Azure data services.</span>
+            </div>
+            <div class="cert-item">
+              <b>Shaping Tomorrow's +LEADers</b> – UNDP (2025–2029)<br>
+              <i>Skills:</i> Communication, Leadership, Problem Solving, AI & Data Analysis<br>
+              <span class="cert-desc">Leadership, communication, and AI/data analysis for impactful initiatives.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Window -->
+      <div class="window" id="contact-window">
+        <div class="window-header">
+          <span>contact.sh</span>
+          <div class="window-controls">
+            <button title="Minimize">—</button>
+            <button title="Maximize">□</button>
+            <button title="Close">✕</button>
+          </div>
+        </div>
+        <div class="window-content">
+          <div class="terminal contact-terminal">
+            <form id="contact-form">
+              <div><span class="prompt">$</span> cat contact_info.txt</div>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Your name" required />
+              </div>
+
+              <div><span class="prompt">$</span> cat email.txt</div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+
+              <div><span class="prompt">$</span> nano message.txt</div>
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea
+                  id="message"
+                  placeholder="Your message..."
+                  required
+                ></textarea>
+              </div>
+
+              <div><span class="prompt">$</span> ./send.sh</div>
+              <button type="submit" class="ubuntu-button">Execute</button>
+            </form>
+
+            <div class="contact-info">
+              <h3>Or reach me directly:</h3>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i> zulfianarahmi4@gmail.com
+              </div>
+              <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                https://www.linkedin.com/in/zulfiana-rahmi/
+              </div>
+              <div class="contact-item">
+                <i class="fab fa-github"></i> https://github.com/zulfianarahmi
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Dock -->
+    <div class="dock">
+      <a class="dock-icon" href="index.html" title="Home">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="dock-icon" href="projects.html" title="Projects">
+        <i class="fas fa-code"></i>
+      </a>
+      <a class="dock-icon" href="https://medium.com/@zulfianarahmi4" target="_blank" title="Blog">
+        <i class="fas fa-file-alt"></i>
+      </a>
+      <a class="dock-icon" href="other.html" title="Other Skill/Hobby">
+        <i class="fas fa-star"></i>
+      </a>
+    </div>
+
+    <!-- Help Button -->
+    <div class="help-button" id="show-help">
+      <i class="fas fa-question-circle"></i>
+    </div>
+
+    <div id="medium-feed"></div>
+    <script>
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@usernamekamu')
+      .then(response => response.json())
+      .then(data => {
+        let html = '<ul>';
+        data.items.slice(0,5).forEach(item => {
+          html += `<li><a href="${item.link}" target="_blank">${item.title}</a></li>`;
+        });
+        html += '</ul>';
+        document.getElementById('medium-feed').innerHTML = html;
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

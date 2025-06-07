@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Ubuntu+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header class="top-bar">
+        <div class="logo">zulfianaRahmi@portfolio:~</div>
+        <nav class="desktop-nav">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="#contact" data-section="contact"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="window">
+            <div class="window-header">
+                <span>projects/</span>
+                <div class="window-controls">
+                    <button title="Minimize">—</button>
+                    <button title="Maximize">□</button>
+                    <button title="Close">✕</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="view-toggle">
+                    <button class="ubuntu-button active" data-view="terminal">Terminal View</button>
+                    <button class="ubuntu-button" data-view="card">Card View</button>
+                </div>
+
+                <!-- Terminal View -->
+                <div class="terminal-view">
+                    <div class="terminal">
+                        <div class="terminal-help">Click on project names to view details</div>
+                        <div><span class="prompt">$</span> ls -la projects/</div>
+                        <div>
+                            > drwxr-xr-x 2 user 4096 Jan 10
+                            <a href="#" class="terminal-link" data-project="techmate">TechMateBot – Cloud, DevOps & Data Learning Assistant</a>
+                        </div>
+                        <div>
+                            > drwxr-xr-x 2 user 4096 Feb 15
+                            <a href="#" class="terminal-link" data-project="crud-api">Backend CRUD API – Node.js, Express, TypeScript</a>
+                        </div>
+                        <div>
+                            > -rw-r--r-- 1 user 1024 Mar 22
+                            <a href="#" class="terminal-link" data-project="restaurant-db">Restaurant Reservation Database – MySQL & Database Design</a>
+                        </div>
+                        <div>
+                            > drwxr-xr-x 2 user 4096 Apr 10
+                            <a href="#" class="terminal-link" data-project="eduquiz">eduquiz-app – Vue.js & Express.js Quiz App</a>
+                        </div>
+                        <div>
+                            > drwxr-xr-x 2 user 4096 May 15
+                            <a href="#" class="terminal-link" data-project="bloomia">bloomia-web – Next.js Fitness App</a>
+                        </div>
+                        <div>
+                            > drwxr-xr-x 2 user 4096 Feb 28
+                            <a href="#" class="terminal-link" data-project="linux-case-files">linux-case-files – Linux Study Cases & Docs</a>
+                        </div>
+                        <div>
+                            > drwxr-xr-x 2 user 4096 Mar 2
+                            <a href="#" class="terminal-link" data-project="basic-linux-admin">Basic-Linux-Administration – Linux Server Setup & Security</a>
+                        </div>
+                        <div>
+                            > drwxr-xr-x 2 user 4096 Mar 5
+                            <a href="#" class="terminal-link" data-project="bash-backup">bash-backup-automation – Bash Backup Script</a>
+                        </div>
+                        <div>
+                            > drwxr-xr-x 2 user 4096 Mar 8
+                            <a href="#" class="terminal-link" data-project="web-server-deploy">Simple-Web-Server-Deployment – Nginx Automation</a>
+                        </div>
+                        <div>
+                            > drwxr-xr-x 2 user 4096 Mar 10
+                            <a href="#" class="terminal-link" data-project="linux-monitoring">Linux-Server-Monitoring-Logging-Practice – Monitoring & Logging</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card View -->
+                <div class="card-view hidden">
+                    <div class="project-card" data-project="techmate">
+                        <div class="project-title">
+                            <i class="fas fa-server"></i>
+                            <h3>TechMateBot</h3>
+                        </div>
+                        <div class="project-description">
+                            Interactive Telegram chatbot to help beginners learn about Cloud Computing, DevOps, and Data Analytics.
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Cloud</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Chatbot</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/username/techmatebot" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="crud-api">
+                        <div class="project-title">
+                            <i class="fas fa-globe"></i>
+                            <h3>Backend CRUD API</h3>
+                        </div>
+                        <div class="project-description">
+                            RESTful API for managing notes, built using Node.js, Express, TypeScript, and PostgreSQL.
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">Express</span>
+                            <span class="project-tag">TypeScript</span>
+                            <span class="project-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/username/crud-api" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="restaurant-db">
+                        <div class="project-title">
+                            <i class="fas fa-robot"></i>
+                            <h3>Restaurant Reservation Database</h3>
+                        </div>
+                        <div class="project-description">
+                            Designed and optimized a MySQL relational database system to manage restaurant reservations.
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">Database</span>
+                            <span class="project-tag">SQL</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/username/restaurant-db" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="eduquiz">
+                        <div class="project-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>eduquiz-app</h3>
+                        </div>
+                        <div class="project-description">
+                            Aplikasi Quiz Interaktif untuk Edukasi. Dibangun dengan Vue.js (Frontend) & Express.js (Backend). Fitur: login, materi, kuis, skor, dan proteksi halaman.
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Vue.js</span>
+                            <span class="project-tag">Express.js</span>
+                            <span class="project-tag">Quiz</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/username/eduquiz" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="bloomia">
+                        <div class="project-title">
+                            <i class="fas fa-heartbeat"></i>
+                            <h3>bloomia-web</h3>
+                        </div>
+                        <div class="project-description">
+                            Bloomia adalah aplikasi fitness hybrid untuk perempuan yang menggabungkan strength training, yoga, dan pilates, dengan fitur personalized training plan dan cycle syncing berdasarkan siklus menstruasi.
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">Tailwind CSS</span>
+                            <span class="project-tag">Supabase</span>
+                            <span class="project-tag">Vercel</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/username/bloomia" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="linux-case-files">
+                        <div class="project-title">
+                            <i class="fas fa-terminal"></i>
+                            <h3>linux-case-files</h3>
+                        </div>
+                        <div class="project-description">
+                            Practical Linux study cases and documentation for learning, debugging, and experimentation.
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Linux</span>
+                            <span class="project-tag">Shell</span>
+                            <span class="project-tag">Documentation</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/zulfianarahmi/linux-case-files" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="basic-linux-admin">
+                        <div class="project-title">
+                            <i class="fas fa-server"></i>
+                            <h3>Basic-Linux-Administration</h3>
+                        </div>
+                        <div class="project-description">
+                            Step-by-step guide to setting up and securing a Linux server (Ubuntu/CentOS). Covers user management, SSH, firewall, and more.
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Linux</span>
+                            <span class="project-tag">Security</span>
+                            <span class="project-tag">Shell</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/zulfianarahmi/Basic-Linux-Administration" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="bash-backup">
+                        <div class="project-title">
+                            <i class="fas fa-hdd"></i>
+                            <h3>bash-backup-automation</h3>
+                        </div>
+                        <div class="project-description">
+                            Simple Bash script to automate backups, with logging and cron job for scheduled runs.
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Bash</span>
+                            <span class="project-tag">Automation</span>
+                            <span class="project-tag">Linux</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/zulfianarahmi/bash-backup-automation" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="web-server-deploy">
+                        <div class="project-title">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>Simple-Web-Server-Deployment</h3>
+                        </div>
+                        <div class="project-description">
+                            Guides and automation scripts for deploying a simple web application using Nginx. Perfect for beginners who want to host their own website!
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Nginx</span>
+                            <span class="project-tag">Shell</span>
+                            <span class="project-tag">Automation</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/zulfianarahmi/Simple-Web-Server-Deployment" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-project="linux-monitoring">
+                        <div class="project-title">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Linux-Server-Monitoring-Logging-Practice</h3>
+                        </div>
+                        <div class="project-description">
+                            Walkthrough of setting up monitoring, logging, and basic server security on a Linux server. Step by step for beginners.
+                        </div>
+                        <div class="project-tags">
+                            <span class="project-tag">Linux</span>
+                            <span class="project-tag">Monitoring</span>
+                            <span class="project-tag">Security</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/zulfianarahmi/Linux-Server-Monitoring-Logging-Practice" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

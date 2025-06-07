@@ -1,0 +1,853 @@
+:root {
+  --ubuntu-orange: #e95420;
+  --ubuntu-purple: #9b59b6;
+  --ubuntu-dark: #2c2c2c;
+  --ubuntu-gray: #4a4a4a;
+  --ubuntu-light: #f0f0f0;
+  --terminal-green: #4af626;
+
+  /* Ubuntu Light Theme Colors */
+  --light-bg: #ffffff;
+  --light-panel: #f7f7f7;
+  --light-border: #d1d1d1;
+  --light-text: #3c3c3c;
+  --light-accent: #e95420;
+  --light-terminal-bg: #ffffff;
+  --light-terminal-text: #333333;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background: var(--ubuntu-dark);
+  color: var(--ubuntu-light);
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Theme Styles */
+body.light-theme {
+  background: var(--light-bg);
+  color: var(--light-text);
+}
+
+.light-theme .top-bar {
+  background: linear-gradient(to right, var(--light-panel), #ffffff);
+  border-bottom: 1px solid var(--ubuntu-orange);
+}
+
+.light-theme .window {
+  background: var(--light-panel);
+  border: 1px solid var(--light-border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .window-header {
+  background: linear-gradient(to right, var(--light-panel), #ebebeb);
+  border-bottom: 1px solid var(--ubuntu-orange);
+  color: var(--light-text);
+}
+
+.light-theme .window-controls button {
+  color: var(--light-text);
+}
+
+.light-theme .terminal {
+  background: var(--light-terminal-bg);
+  color: var(--light-terminal-text);
+  border: 1px solid var(--light-border);
+}
+
+.light-theme .prompt {
+  color: var(--ubuntu-orange);
+}
+
+.light-theme .terminal-link {
+  color: var(--ubuntu-purple);
+}
+
+.light-theme .dock {
+  background: rgba(247, 247, 247, 0.9);
+  border: 1px solid var(--light-border);
+}
+
+.light-theme .dock-icon {
+  background: var(--light-panel);
+  color: var(--light-text);
+  border: 1px solid var(--ubuntu-orange);
+}
+
+/* Top Bar - Ubuntu Style */
+.top-bar {
+  background: linear-gradient(to right, var(--ubuntu-dark), var(--ubuntu-gray));
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ubuntu-orange);
+  font-family: "Ubuntu Mono", monospace;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-bar .logo {
+  color: var(--ubuntu-orange);
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.desktop-nav a {
+  text-decoration: none;
+  color: inherit;
+  margin-right: 20px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.desktop-nav a i {
+  margin-right: 5px;
+}
+
+.desktop-nav span:hover,
+.mobile-nav span:hover {
+  opacity: 1;
+  color: var(--ubuntu-orange);
+}
+
+.mobile-menu-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 46px;
+  right: 0;
+  background: var(--ubuntu-dark);
+  width: 200px;
+  z-index: 99;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.3);
+  border-left: 1px solid var(--ubuntu-orange);
+  border-bottom: 1px solid var(--ubuntu-orange);
+}
+
+.light-theme .mobile-nav {
+  background: var(--light-panel);
+  border-left: 1px solid var(--ubuntu-orange);
+  border-bottom: 1px solid var(--ubuntu-orange);
+}
+
+.mobile-nav span {
+  display: block;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.light-theme .mobile-nav span {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav span i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Main Content */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Window Card */
+.window {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 30px;
+  background: var(--ubuntu-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--ubuntu-purple);
+  position: relative;
+  box-sizing: border-box;
+  min-height: 350px;
+}
+
+.window-header {
+  background: linear-gradient(to right, var(--ubuntu-gray), var(--ubuntu-dark));
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--ubuntu-orange);
+}
+
+.window-controls button {
+  background: none;
+  border: none;
+  color: var(--ubuntu-light);
+  margin-left: 10px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.window-controls button:hover {
+  opacity: 1;
+}
+
+.window-content {
+  padding: 25px;
+}
+
+/* Terminal Box */
+.terminal {
+  background: #1a1a1a;
+  color: var(--terminal-green);
+  padding: 20px;
+  font-family: "Ubuntu Mono", monospace;
+  border-radius: 5px;
+  border: 1px solid var(--ubuntu-orange);
+  margin: 20px 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+.terminal-help {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 0.8rem;
+  color: #888;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 3px 8px;
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+.light-theme .terminal-help {
+  background: rgba(0, 0, 0, 0.1);
+  color: #777;
+}
+
+.prompt {
+  color: var(--ubuntu-orange);
+}
+
+.terminal-link {
+  color: var(--terminal-green);
+  text-decoration: none;
+  position: relative;
+  padding: 2px 0;
+}
+
+.terminal-link:hover {
+  text-decoration: underline;
+}
+
+.ubuntu-orange {
+  color: var(--ubuntu-orange);
+}
+
+.ubuntu-purple {
+  color: var(--ubuntu-purple);
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Dock */
+.dock {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(44, 44, 44, 0.9);
+  padding: 10px 20px;
+  border-radius: 15px;
+  display: flex;
+  gap: 15px;
+  border: 1px solid var(--ubuntu-purple);
+  backdrop-filter: blur(5px);
+  z-index: 99;
+}
+
+.dock-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--ubuntu-dark);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ubuntu-light);
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid var(--ubuntu-orange);
+  font-size: 1.5rem;
+}
+
+.dock-icon:hover {
+  transform: scale(1.1) translateY(-5px);
+  background: var(--ubuntu-orange);
+}
+
+.dock-icon.active {
+  background: var(--ubuntu-orange);
+  transform: scale(1.1);
+}
+
+/* Theme switcher */
+.theme-switcher {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: var(--ubuntu-dark);
+  border: 1px solid var(--ubuntu-orange);
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.light-theme .theme-switcher {
+  background: var(--light-panel);
+  border: 1px solid var(--ubuntu-orange);
+}
+
+.theme-switcher button {
+  background: transparent;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: var(--ubuntu-light);
+  border-radius: 3px;
+}
+
+.light-theme .theme-switcher button {
+  color: var(--light-text);
+}
+
+.theme-switcher button:hover {
+  background: var(--ubuntu-orange);
+  color: white;
+}
+
+/* Window animations */
+.window {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.window:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Helper classes */
+.hidden {
+  display: none !important;
+}
+
+/* Project Cards */
+.view-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ubuntu-button {
+  background: var(--ubuntu-dark);
+  color: white;
+  border: 1px solid var(--ubuntu-orange);
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.light-theme .ubuntu-button {
+  background: var(--light-panel);
+  color: var(--light-text);
+}
+
+.ubuntu-button:hover,
+.ubuntu-button.active {
+  background: var(--ubuntu-orange);
+  color: white;
+}
+
+.card-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--ubuntu-dark);
+  border-radius: 8px;
+  border-left: 4px solid var(--ubuntu-orange);
+  padding: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.light-theme .project-card {
+  background: var(--light-panel);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.project-title i {
+  color: var(--ubuntu-orange);
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.project-description {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.project-tag {
+  background: var(--ubuntu-orange);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.project-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.project-btn {
+  background: var(--ubuntu-dark);
+  color: white;
+  border: 1px solid var(--ubuntu-orange);
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.light-theme .project-btn {
+  background: var(--light-panel);
+  color: var(--light-text);
+}
+
+.project-btn:hover {
+  background: var(--ubuntu-orange);
+  color: white;
+}
+
+.project-btn i {
+  margin-right: 5px;
+}
+
+/* Project Detail Styles */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid var(--ubuntu-orange);
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#particles-js {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .window {
+    max-width: 98vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .window {
+    max-width: 98vw;
+    margin: 10px 0;
+    padding: 0;
+  }
+  .window-content {
+    padding: 10px;
+  }
+}
+
+.social-links-large a {
+  font-size: 2.2rem;
+  margin-right: 18px;
+  color: var(--ubuntu-orange);
+  transition: transform 0.2s, color 0.2s;
+  display: inline-block;
+}
+.social-links-large a:last-child {
+  margin-right: 0;
+}
+.social-links-large a:hover {
+  color: var(--ubuntu-purple);
+  transform: scale(1.25) rotate(-8deg);
+}
+
+.profile-section {
+  text-align: center;
+}
+.profile-img {
+  display: inline-block;
+}
+
+#wave-hand {
+  animation: wave 1.5s infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+@keyframes wave {
+  0% { transform: rotate(0deg);}
+  10% { transform: rotate(14deg);}
+  20% { transform: rotate(-8deg);}
+  30% { transform: rotate(14deg);}
+  40% { transform: rotate(-4deg);}
+  50% { transform: rotate(10deg);}
+  60% { transform: rotate(0deg);}
+  100% { transform: rotate(0deg);}
+}
+
+/* Project Filter */
+.filter-window {
+    margin-bottom: 20px;
+}
+
+.filter-container {
+    padding: 15px;
+}
+
+.search-box {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ubuntu-orange);
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px 8px 8px 35px;
+    border: 1px solid var(--ubuntu-orange);
+    border-radius: 4px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.filter-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-tag {
+    padding: 5px 15px;
+    border: 1px solid var(--ubuntu-orange);
+    border-radius: 15px;
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-tag:hover, .filter-tag.active {
+    background: var(--ubuntu-orange);
+    color: var(--bg-color);
+}
+
+/* Project Card Improvements */
+.project-card {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.project-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 3px 8px;
+    background: var(--ubuntu-orange);
+    color: var(--bg-color);
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.project-stats {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.project-stats span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.project-btn {
+    padding: 8px 15px;
+    border: 1px solid var(--ubuntu-orange);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-btn:hover {
+    background: var(--ubuntu-orange);
+    color: var(--bg-color);
+}
+
+/* Project Detail Window */
+.project-detail-content {
+    padding: 20px;
+}
+
+.project-header {
+    margin-bottom: 20px;
+}
+
+.project-title-large {
+    font-size: 2em;
+    color: var(--ubuntu-orange);
+    margin-bottom: 10px;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.project-gallery img {
+    width: 100%;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.project-description-full {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.project-features {
+    margin: 20px 0;
+}
+
+.project-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-features li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.project-features li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--ubuntu-orange);
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.project-testimonials {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.project-card:nth-child(2) { animation-delay: 0.1s; }
+.project-card:nth-child(3) { animation-delay: 0.2s; }
+.project-card:nth-child(4) { animation-delay: 0.3s; }
+.project-card:nth-child(5) { animation-delay: 0.4s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-tags {
+        justify-content: center;
+    }
+    
+    .project-stats {
+        justify-content: center;
+    }
+    
+    .project-actions {
+        flex-direction: column;
+    }
+    
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 18px;
+}
+.cert-item {
+  background: rgba(44,44,44,0.85);
+  border-left: 4px solid var(--ubuntu-orange);
+  border-radius: 6px;
+  padding: 16px 18px 10px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+.cert-item b {
+  color: var(--ubuntu-orange);
+  font-size: 1.08em;
+}
+.cert-desc {
+  display: block;
+  margin-top: 6px;
+  color: #bbb;
+  font-size: 0.97em;
+}
+@media (max-width: 600px) {
+  .cert-item { padding: 12px 8px 8px 12px; }
+}
