@@ -31,30 +31,26 @@ const terminalCommands = {
   },
 };
 
-// Theme switcher (tetap dipertahankan)
-const themeSwitcher = document.createElement("div");
-themeSwitcher.className = "theme-switcher";
-themeSwitcher.innerHTML = `
-      <button id="dark-theme">Dark</button>
-      <button id="light-theme">Light</button>
-    `;
-document.body.appendChild(themeSwitcher);
-
-document.getElementById("light-theme").addEventListener("click", () => {
-  document.body.classList.add("light-theme");
-  localStorage.setItem("theme", "light");
-});
-
-document.getElementById("dark-theme").addEventListener("click", () => {
-  document.body.classList.remove("light-theme");
-  localStorage.setItem("theme", "dark");
-});
-
-// Check saved theme (tetap dipertahankan)
+// Theme switcher (rapikan, hanya attach event listener ke tombol yang sudah ada di HTML)
 document.addEventListener("DOMContentLoaded", () => {
+  const lightBtn = document.getElementById("light-theme");
+  const darkBtn = document.getElementById("dark-theme");
+  if (lightBtn && darkBtn) {
+    lightBtn.addEventListener("click", () => {
+      document.body.classList.add("light-theme");
+      localStorage.setItem("theme", "light");
+    });
+    darkBtn.addEventListener("click", () => {
+      document.body.classList.remove("light-theme");
+      localStorage.setItem("theme", "dark");
+    });
+  }
+  // Set theme on load
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "light") {
     document.body.classList.add("light-theme");
+  } else {
+    document.body.classList.remove("light-theme");
   }
 });
 
@@ -143,28 +139,38 @@ const viewToggle = document.querySelector('.view-toggle');
 const terminalView = document.querySelector('.terminal-view');
 const cardView = document.querySelector('.card-view');
 
-viewToggle.addEventListener('click', function(e) {
-    if (e.target.classList.contains('ubuntu-button')) {
-        // Remove active class from all buttons
-        viewToggle.querySelectorAll('.ubuntu-button').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        
-        // Add active class to clicked button
-        e.target.classList.add('active');
-        
-        // Toggle views with animation
-        if (e.target.dataset.view === 'terminal') {
-            cardView.classList.add('hidden');
-            terminalView.classList.remove('hidden');
-            terminalView.style.animation = 'fadeIn 0.5s ease forwards';
-        } else {
-            terminalView.classList.add('hidden');
-            cardView.classList.remove('hidden');
-            cardView.style.animation = 'fadeIn 0.5s ease forwards';
-        }
-    }
-});
+if (viewToggle && terminalView && cardView) {
+  viewToggle.addEventListener('click', function(e) {
+      if (e.target.classList.contains('ubuntu-button')) {
+          // Remove active class from all buttons
+          viewToggle.querySelectorAll('.ubuntu-button').forEach(btn => {
+              btn.classList.remove('active');
+          });
+          
+          // Add active class to clicked button
+          e.target.classList.add('active');
+          
+          // Toggle views with animation
+          if (e.target.dataset.view === 'terminal') {
+              cardView.classList.add('hidden');
+              terminalView.classList.remove('hidden');
+              terminalView.style.animation = 'fadeIn 0.5s ease forwards';
+          } else {
+              terminalView.classList.add('hidden');
+              cardView.classList.remove('hidden');
+              cardView.style.animation = 'fadeIn 0.5s ease forwards';
+          }
+      }
+  });
+}
+
+// Back button for project detail (cek dulu elemennya)
+const backBtn = document.querySelector('.back-button');
+if (backBtn) {
+  backBtn.addEventListener('click', function () {
+    document.getElementById('project-detail-window').classList.add('hidden');
+  });
+}
 
 // Particles.js initialization
 window.addEventListener('DOMContentLoaded', function() {

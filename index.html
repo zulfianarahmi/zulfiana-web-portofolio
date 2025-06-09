@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>👩‍💻 Zulfiana Rahmi</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Ubuntu+Mono&display=swap"
       rel="stylesheet"
@@ -16,6 +17,10 @@
   </head>
   <body>
     <div id="particles-js"></div>
+    <div class="theme-switcher">
+      <button id="dark-theme">Dark</button>
+      <button id="light-theme">Light</button>
+    </div>
     <!-- Ubuntu Top Bar -->
     <header class="top-bar">
       <div class="logo">zulfianaRahmi@portfolio:~</div>
@@ -55,6 +60,11 @@
                 class="profile-img"
                 width="400"
               />
+              <div class="profile-badges" style="margin: 12px 0 0 0; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <span class="profile-badge" style="background: var(--ubuntu-orange); color: #fff; border-radius: 12px; padding: 4px 14px; font-size: 0.95em; font-family: 'Ubuntu Mono', monospace;">Open to Work</span>
+                <span class="profile-badge" style="background: var(--ubuntu-purple); color: #fff; border-radius: 12px; padding: 4px 14px; font-size: 0.95em; font-family: 'Ubuntu Mono', monospace;">#LinuxEnthusiast</span>
+                <span class="profile-badge" style="background: #333; color: var(--ubuntu-orange); border-radius: 12px; padding: 4px 14px; font-size: 0.95em; font-family: 'Ubuntu Mono', monospace;">Love learning anything</span>
+              </div>
               <div style="text-align:center; margin-top: 10px;">
                 <span id="typing-hello" style="font-size:2.2rem;font-weight:bold;color:var(--ubuntu-orange);display:inline-block;"></span>
                 <span id="wave-hand" style="font-size:2.2rem;display:inline-block;">👋</span>
@@ -99,7 +109,7 @@
             <div>> Full Name: Zulfiana Rahmi 🌸</div>
             <br />
             <div><span class="prompt">$</span> Profession i want be.txt</div>
-            <div>> Syadmin</div>
+            <div>> Sysadmin</div>
             <div>> Technical Writing & Documentation</div>
             <div>> Content Creation & Blog Writing</div>
             <br />
@@ -129,10 +139,10 @@
                 <h3>eduquiz-app</h3>
               </div>
               <div class="project-description">
-                Aplikasi Quiz Interaktif untuk Edukasi. Dibangun dengan Vue.js (Frontend) & Express.js (Backend). Fitur: login, materi, kuis, skor, dan proteksi halaman.
+                Interactive Quiz App for Education. Built with Vue.js (Frontend) & Express.js (Backend). Features: login, materials, quizzes, scores, and page protection.
               </div>
               <div class="project-actions">
-                <a href="https://github.com/username/eduquiz" class="project-btn" target="_blank">
+                <a href="https://github.com/zulfianarahmi/eduquiz-app" class="project-btn" target="_blank">
                   <i class="fab fa-github"></i> View Code
                 </a>
               </div>
@@ -199,7 +209,7 @@
             <li>Bash scripting for simple backup & deployment automation</li>
             <li>Basic data analysis with Python (NumPy, Pandas) & SQL</li>
             <li>Basic network security & cybersecurity (Cisco Essentials)</li>
-            <li>Project management & teamwork (Jira, Notion, workshop facilitation)</li>
+            <li>Project management & teamwork (Jira, Notion)</li>
           </ul>
         </div>
       </div>
@@ -233,7 +243,7 @@
               <li>Hands-on with Alibaba Cloud Model Studio, QwenLLM, SahabatAI LLM.</li>
               <li>Preparing for Alibaba Clouder global certification.</li>
             </ul>
-          </div>
+            </div>
           <div class="job">
             <h3>Cloud Engineering Trainee – Digital Talent Scholarship (Oracle Cloud Infrastructure Foundation I & II)</h3>
             <span>Feb 2024 – Jun 2024 | Indonesia</span>
@@ -251,7 +261,7 @@
               <li>Hands-on with Cisco Packet Tracer for real-world cybersecurity scenarios.</li>
               <li>Engaged in projects and case studies focused on identifying and mitigating security threats.</li>
             </ul>
-          </div>
+            </div>
 
           <h2 class="ubuntu-orange">Community & Leadership</h2>
           <div class="job">
@@ -270,7 +280,7 @@
               <li>Led project planning, tracked tasks, and managed team progress using Jira.</li>
               <li>Ensured cross-team communication and collaboration, resolving blockers and maintaining alignment with project goals.</li>
             </ul>
-          </div>
+            </div>
           <div class="job">
             <h3>Google Arcade Facilitator – Google</h3>
             <span>May 2024 – Jul 2024</span>
@@ -414,10 +424,11 @@
               </div>
               <div class="contact-item">
                 <i class="fab fa-linkedin"></i>
-                https://www.linkedin.com/in/zulfiana-rahmi/
+                <a href="https://www.linkedin.com/in/zulfiana-rahmi/" target="_blank" style="color: inherit; text-decoration: none;">https://www.linkedin.com/in/zulfiana-rahmi/</a>
               </div>
               <div class="contact-item">
-                <i class="fab fa-github"></i> https://github.com/zulfianarahmi
+                <i class="fab fa-github"></i> 
+                <a href="https://github.com/zulfianarahmi" target="_blank" style="color: inherit; text-decoration: none;">https://github.com/zulfianarahmi</a>
               </div>
             </div>
           </div>
@@ -447,18 +458,23 @@
     </div>
 
     <div id="medium-feed"></div>
+    <!-- Komentari script fetch Medium feed -->
+    <!--
     <script>
     fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@usernamekamu')
       .then(response => response.json())
       .then(data => {
-        let html = '<ul>';
-        data.items.slice(0,5).forEach(item => {
-          html += `<li><a href="${item.link}" target="_blank">${item.title}</a></li>`;
-        });
-        html += '</ul>';
-        document.getElementById('medium-feed').innerHTML = html;
+        if (data && data.items) {
+          let html = '<ul>';
+          data.items.slice(0,5).forEach(item => {
+            html += `<li><a href="${item.link}" target="_blank">${item.title}</a></li>`;
+          });
+          html += '</ul>';
+          document.getElementById('medium-feed').innerHTML = html;
+        }
       });
     </script>
+    -->
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>

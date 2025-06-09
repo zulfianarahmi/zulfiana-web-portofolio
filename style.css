@@ -328,7 +328,9 @@ body.light-theme {
   border: 1px solid var(--ubuntu-orange);
   padding: 5px;
   border-radius: 5px;
-  z-index: 1000;
+  z-index: 2000;
+  display: flex;
+  gap: 5px;
 }
 
 .light-theme .theme-switcher {
@@ -352,6 +354,18 @@ body.light-theme {
 .theme-switcher button:hover {
   background: var(--ubuntu-orange);
   color: white;
+}
+
+.bg-pattern {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.light-theme .bg-pattern path {
+  stroke: #e0e0e0 !important;
 }
 
 /* Window animations */
